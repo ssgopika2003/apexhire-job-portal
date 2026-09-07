@@ -1,0 +1,16 @@
+{
+  "name": "apexhire",
+  "version": "1.0.0",
+  "description": "ApexHire - Premium Full-Stack Open-Source Job Portal Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "mongoose": "^9.6.3"
+  },
+  "author": "TalentHub Core Contributors",
+  "license": "MIT"
+}
