@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const crypto = require('crypto');
 const mongoose = require('mongoose');
 const db = require('./database');
 
@@ -65,7 +66,9 @@ async function seedDatabase() {
             if (!employer) {
                 employer = new db.User({
                     username: "stellar_corp",
-                    passwordHash: db.hashPassword("stellar123"),
+                    passwordHash: db.hashPassword(
+                        process.env.DEMO_EMPLOYER_PASSWORD || crypto.randomBytes(32).toString('hex')
+                    ),
                     role: "employer",
                     profile: {
                         companyName: "Stellar Systems Co.",

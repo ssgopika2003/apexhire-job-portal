@@ -514,7 +514,9 @@ async function initializeDatabase() {
                     employer = {
                         _id: "usr_5dohpci6v",
                         username: "stellar_corp",
-                        passwordHash: hashPassword("stellar123"),
+                        passwordHash: hashPassword(
+                            process.env.DEMO_EMPLOYER_PASSWORD || crypto.randomBytes(32).toString('hex')
+                        ),
                         role: "employer",
                         profile: {
                             companyName: "Stellar Systems Co.",
